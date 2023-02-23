@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+            "WikiTeq Team",
+            "{{ cookiecutter.author_name }}"
+		]
+	},
+	{% if cookiecutter.special_page %}
+	"{{ cookiecutter.__sp_i18n_prefix }}": "{{ cookiecutter.special_page|capitalize }}",
+	"{{ cookiecutter.__sp_i18n_prefix }}-summary": "TODO special page summary",
+	"{{ cookiecutter.__sp_i18n_prefix }}-intro": "TODO special page intro",
+	{% endif %}
+	{% if cookiecutter.user_right %}
+	"right-{{ cookiecutter.user_right }}": "TODO user right",
+	"action-{{ cookiecutter.user_right }}": "TODO user action",
+	{% endif %}
+	"{{ cookiecutter.__i18n_prefix }}-desc": "{{ cookiecutter.description }}"
+}

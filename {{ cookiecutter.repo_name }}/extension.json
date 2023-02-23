@@ -1,0 +1,84 @@
+{
+	"name": "{{ cookiecutter.extension_name }}",
+	"author": [
+		"WikiTeq Team",
+        "{{ cookiecutter.author_name }}"
+	],
+	"descriptionmsg": "{{ cookiecutter.__i18n_prefix }}-desc",
+	{% if cookiecutter.license != 'none' %}
+	"license-name": "{{ cookiecutter.license }}",
+	{% endif %}
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.35.0"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\{{ cookiecutter.__titlecase_name }}\\": "src/"
+	},
+	"MessagesDirs": {
+		"{{ cookiecutter.__titlecase_name }}": [
+			"i18n"
+		]
+	},
+	"config": {
+		"{{ cookiecutter.__titlecase_name }}Enabled": {
+			"value": true,
+			"description": "Whether to enable the extension"
+		}
+	},
+	{% if cookiecutter.user_right %}
+	"AvailableRights": [
+		"{{ cookiecutter.user_right }}"
+	],
+	{% if cookiecutter.user_right_group != 'none' %}
+	"GroupPermissions": {
+		"{{ cookiecutter.user_right_group }}": {
+			"{{ cookiecutter.user_right }}": true
+		}
+	},
+	{% endif %}
+	{% endif %}
+	"HookHandlers": {
+		{% if cookiecutter.has_schema %}
+		"SchemaHooks": {
+			"class": "MediaWiki\\Extension\\{{ cookiecutter.__titlecase_name }}\\SchemaHooks"
+		},
+		{% endif %}
+		"Main": {
+			"class": "MediaWiki\\Extension\\{{ cookiecutter.__titlecase_name }}\\Hooks",
+			"services": [
+				"MainConfig"
+			]
+		}
+	},
+	"Hooks": {
+		{% if cookiecutter.has_schema %}
+		"LoadExtensionSchemaUpdates": {
+			"handler": "SchemaHooks"
+		},
+		{% endif %}
+		"BeforePageDisplay": {
+			"handler": "Main"
+		}
+	},
+	"ResourceModules": {
+		"ext.{{ cookiecutter.__titlecase_name }}": {
+			"localBasePath": "modules/{{ cookiecutter.__titlecase_name }}",
+			"remoteExtPath": "{{ cookiecutter.repo_name }}/modules/{{ cookiecutter.__titlecase_name }}",
+			"dependencies": [],
+			"styles": [],
+			"packageFiles": [
+				"init.js"
+			],
+			"messages": []
+		}
+	},
+	{% if cookiecutter.special_page %}
+	"SpecialPages": {
+		"{{ cookiecutter.special_page }}": {
+			"class": "MediaWiki\\Extension\\{{ cookiecutter.__titlecase_name }}\\Special{{ cookiecutter.special_page }}"
+		}
+	},
+	{% endif %}
+	"manifest_version": 2
+}

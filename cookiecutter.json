@@ -1,0 +1,30 @@
+{
+    "repo_name": "mediawiki-extensions-example",
+    "extension_name": "ExampleExtension",
+    "description": "A short description of the extension.",
+    "author_name": "Your Name",
+    "__i18n_prefix": "{{ cookiecutter.extension_name|lower }}",
+    "__titlecase_name": "{{ cookiecutter.extension_name|replace(' ', '') }}",
+    "license": [
+        "GPL-2.0-or-later",
+        "GLP-2.0-only",
+        "WTFPL",
+        "none"
+    ],
+    "has_schema": false,
+    "NOTE": "The next few settings are optional, leave blank for none. Answers to the notes are ignored.",
+    "NOTE_sp": "special_page is the name of the special page.",
+    "special_page": "",
+    "__sp_i18n_prefix": "{{ cookiecutter.special_page|lower }}",
+
+    "NOTE_ur": "user_right is the name of a user right to create.",
+    "user_right": "",
+    "user_right_group": ["none", "*", "user", "sysop"],
+
+    "_new_lines": "\n",
+    "__copy_without_render": [
+        "{{ cookiecutter.repo_name }}/_licenses",
+        "{{ cookiecutter.repo_name }}/sql/tables.json"
+    ],
+    "__license_tag": "Set in pre project hook"
+}
