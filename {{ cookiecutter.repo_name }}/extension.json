@@ -10,7 +10,7 @@
 	{% endif %}
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.35.0"
+		"MediaWiki": ">= {{ cookiecutter.minimum_mw }}"
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\{{ cookiecutter.__titlecase_name }}\\": "src/"
@@ -26,20 +26,20 @@
 			"description": "Whether to enable the extension"
 		}
 	},
-	{% if cookiecutter.user_right %}
+	{% if cookiecutter.__user_right_name %}
 	"AvailableRights": [
-		"{{ cookiecutter.user_right }}"
+		"{{ cookiecutter.__user_right_name }}"
 	],
-	{% if cookiecutter.user_right_group != 'none' %}
+	{% if cookiecutter.add_right_to_group != 'none' %}
 	"GroupPermissions": {
-		"{{ cookiecutter.user_right_group }}": {
+		"{{ cookiecutter.add_right_to_group }}": {
 			"{{ cookiecutter.user_right }}": true
 		}
 	},
 	{% endif %}
 	{% endif %}
 	"HookHandlers": {
-		{% if cookiecutter.has_schema %}
+		{% if cookiecutter.__has_database_schemas %}
 		"SchemaHooks": {
 			"class": "MediaWiki\\Extension\\{{ cookiecutter.__titlecase_name }}\\SchemaHooks"
 		},
@@ -52,7 +52,7 @@
 		}
 	},
 	"Hooks": {
-		{% if cookiecutter.has_schema %}
+		{% if cookiecutter.__has_database_schemas %}
 		"LoadExtensionSchemaUpdates": {
 			"handler": "SchemaHooks"
 		},
@@ -66,16 +66,18 @@
 			"localBasePath": "modules/{{ cookiecutter.__titlecase_name }}",
 			"remoteExtPath": "{{ cookiecutter.repo_name }}/modules/{{ cookiecutter.__titlecase_name }}",
 			"dependencies": [],
-			"styles": [],
+			"styles": [
+				"styles.css"
+			],
 			"packageFiles": [
 				"init.js"
 			],
 			"messages": []
 		}
 	},
-	{% if cookiecutter.special_page %}
+	{% if cookiecutter.__special_page_name %}
 	"SpecialPages": {
-		"{{ cookiecutter.special_page }}": {
+		"{{ cookiecutter.__special_page_name }}": {
 			"class": "MediaWiki\\Extension\\{{ cookiecutter.__titlecase_name }}\\Special{{ cookiecutter.special_page }}"
 		}
 	},

@@ -5,14 +5,14 @@
             "{{ cookiecutter.author_name }}"
 		]
 	},
-	{% if cookiecutter.special_page %}
-	"{{ cookiecutter.__sp_i18n_prefix }}": "Title of [[Special:{{ cookiecutter.special_page }}]]",
-	"{{ cookiecutter.__sp_i18n_prefix }}-summary": "Description at the top of [[Special:{{ cookiecutter.special_page }}]]",
-	"{{ cookiecutter.__sp_i18n_prefix }}-intro": "Introduction at the top of [[Special:{{ cookiecutter.special_page }}]]",
+	{% if cookiecutter.__special_page_name %}
+	"{{ cookiecutter.__sp_i18n_prefix }}": "Title of [[Special:{{ cookiecutter.__special_page_name }}]]",
+	"{{ cookiecutter.__sp_i18n_prefix }}-summary": "Description at the top of [[Special:{{ cookiecutter.__special_page_name }}]]",
+	"{{ cookiecutter.__sp_i18n_prefix }}-intro": "Introduction at the top of [[Special:{{ cookiecutter.__special_page_name }}]]",
 	{% endif %}
-	{% if cookiecutter.user_right %}
-	"right-{{ cookiecutter.user_right }}": "{{ "{{" }}doc-right|{{ cookiecutter.user_right }}{{ "}}" }}",
-	"action-{{ cookiecutter.user_right }}": "{{ "{{" }}doc-action|{{ cookiecutter.user_right }}{{ "}}" }}",
+	{% if cookiecutter.__user_right_name %}
+	"right-{{ cookiecutter.__user_right_name }}": "{{ "{{" }}doc-right|{{ cookiecutter.__user_right_name }}{{ "}}" }}",
+	"action-{{ cookiecutter.__user_right_name }}": "{{ "{{" }}doc-action|{{ cookiecutter.__user_right_name }}{{ "}}" }}",
 	{% endif %}
 	"{{ cookiecutter.__i18n_prefix }}-desc": "{{ "{{" }}desc|name={{ cookiecutter.extension_name }}{{ "}}" }}"
 }

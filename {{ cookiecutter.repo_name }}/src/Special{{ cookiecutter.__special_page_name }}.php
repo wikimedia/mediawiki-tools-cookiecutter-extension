@@ -10,10 +10,10 @@ use SpecialPage;
  * @author WikiTeq Team
  * @author {{ cookiecutter.author_name }}
  */
-class Special{{ cookiecutter.special_page }} extends SpecialPage {
+class Special{{ cookiecutter.__special_page_name }} extends SpecialPage {
 
     public function __construct() {
-        parent::__construct( '{{ cookiecutter.special_page }}' );
+        parent::__construct( '{{ cookiecutter.__special_page_name }}' );
     }
 
     /** @param string|null $subpage */

@@ -16,7 +16,7 @@ def conditionalFile(optionVal, fileName):
     optType = type(optionVal)
     if optType == bool and optionVal == True:
         return
-    if optType == str and optionVal == '':
+    if optType == str and optionVal != '':
         return
 
     # Just in case something went wrong with the value, don't always delete
@@ -80,10 +80,11 @@ def processLicense(licenseName):
 # Placeholders are already replaced, and we only remove files if the placeholder
 # was empty, so no need to include in the file name here
 CONDITIONAL_FILES = [
-    ['{{ cookiecutter.special_page }}', 'src/Special.php'],
-    [{{ cookiecutter.has_schema }}, 'sql/tables.json'],
-    [{{ cookiecutter.has_schema }}, 'sql/tables-generated.sql'],
-    [{{ cookiecutter.has_schema }}, 'sql']
+    ['{{ cookiecutter.__special_page_name }}', 'src/Special.php'],
+    ['{{ cookiecutter.__has_database_schemas }}', 'sql/tables.json'],
+    ['{{ cookiecutter.__has_database_schemas }}', 'sql/tables-generated.sql'],
+    ['{{ cookiecutter.__has_database_schemas }}', 'sql'],
+    ['{{ cookiecutter.__has_database_schemas }}', 'src/SchemaHooks.php']
 ]
 
 # Files with conditions have blank lines to remove

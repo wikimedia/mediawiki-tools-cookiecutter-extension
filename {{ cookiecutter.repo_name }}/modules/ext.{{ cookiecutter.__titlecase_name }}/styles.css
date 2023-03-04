@@ -1,0 +1,5 @@
+/* Add some extra text before <h1> elements, just to verify that the */
+/* styles are being loaded */
+h1::before {
+	content: 'Hello from ext.{{ cookiecutter.__titlecase_name }} '
+}

@@ -11,20 +11,20 @@
         "WTFPL",
         "none"
     ],
-    "has_schema": false,
-    "NOTE": "The next few settings are optional, leave blank for none. Answers to the notes are ignored.",
-    "NOTE_sp": "special_page is the name of the special page.",
-    "special_page": "",
-    "__sp_i18n_prefix": "{{ cookiecutter.special_page|lower }}",
-
-    "NOTE_ur": "user_right is the name of a user right to create.",
-    "user_right": "",
-    "user_right_group": ["none", "*", "user", "sysop"],
+    "minimum_mw": "1.35.0",
+    "has_database_schemas": false,
+    "special_page": "Name of special page (leave blank to omit)",
+    "user_right": "Name of user right to create (leave blank to omit)",
+    "add_right_to_group": ["none", "*", "user", "sysop"],
 
     "_new_lines": "\n",
     "__copy_without_render": [
         "{{ cookiecutter.repo_name }}/_licenses",
         "{{ cookiecutter.repo_name }}/sql/tables.json"
     ],
+    "__special_page_name": "Set in pre project hook",
+    "__sp_i18n_prefix": "Set in pre project hook",
+    "__user_right_name": "Set in pre project hook",
+    "__has_database_schemas": "Set in pre project hook",
     "__license_tag": "Set in pre project hook"
 }

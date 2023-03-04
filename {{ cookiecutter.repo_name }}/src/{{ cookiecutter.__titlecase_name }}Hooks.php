@@ -34,7 +34,7 @@ class {{ cookiecutter.__titlecase_name }}Hooks implements BeforePageDisplayHook 
 	 * @return void This hook must not abort, it must return no value
 	 */
     public function onBeforePageDisplay( $out, $skin ): void {
-        if ($this->config->get('ext.{{ cookiecutter.__titlecase_name }}Enabled')) {
+        if ( $this->config->get( '{{ cookiecutter.__titlecase_name }}Enabled' ) ) {
             $out->addModule( "ext.{{ cookiecutter.__titlecase_name }}" );
         }
     }
