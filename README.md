@@ -5,7 +5,7 @@ This provides a template to create new MediaWiki extension using the
 
 After installing cookiecutter, run:
 ```
-cookiecutter gh:WikiTeq/cookiecutter-mediawiki-extension
+cookiecutter gh:wikimedia/mediawiki-tools-cookiecutter-extension
 ```
 
 For example, the following would create the folder

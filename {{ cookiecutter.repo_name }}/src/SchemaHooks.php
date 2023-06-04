@@ -11,7 +11,6 @@ use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
  * Needs to be separate from the main hooks because LoadExtensionSchemaUpdates
  * cannot have services injected.
  *{{ cookiecutter.__license_tag }}
- * @author WikiTeq Team
  * @author {{ cookiecutter.author_name }}
  */
 class SchemaHooks implements LoadExtensionSchemaUpdates {

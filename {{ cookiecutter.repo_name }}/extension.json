@@ -1,7 +1,6 @@
 {
 	"name": "{{ cookiecutter.extension_name }}",
 	"author": [
-		"WikiTeq Team",
         "{{ cookiecutter.author_name }}"
 	],
 	"descriptionmsg": "{{ cookiecutter.__i18n_prefix }}-desc",

@@ -7,7 +7,6 @@ use SpecialPage;
 /**
  * Special page for {{ cookiecutter.__titlecase_name }}
  *{{ cookiecutter.__license_tag }}
- * @author WikiTeq Team
  * @author {{ cookiecutter.author_name }}
  */
 class Special{{ cookiecutter.__special_page_name }} extends SpecialPage {

@@ -1,7 +1,6 @@
 {
 	"@metadata": {
 		"authors": [
-            "WikiTeq Team",
             "{{ cookiecutter.author_name }}"
 		]
 	},

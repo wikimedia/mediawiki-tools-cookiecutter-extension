@@ -10,7 +10,6 @@ use Skin;
 /**
  * General hook handler for {{ cookiecutter.__titlecase_name }}
  *{{ cookiecutter.__license_tag }}
- * @author WikiTeq Team
  * @author {{ cookiecutter.author_name }}
  */
 class {{ cookiecutter.__titlecase_name }}Hooks implements BeforePageDisplayHook {
